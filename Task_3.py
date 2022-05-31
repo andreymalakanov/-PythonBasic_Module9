@@ -17,3 +17,18 @@ print('Задача 3. Кривой мессенджер')
 # Пример:
 # Введите текст: Пр*ивет как дела
 # Символ ‘*’ стоит на позиции 3
+
+phrase = input('Введите текст: ')
+counter = 0
+asterisk = False
+
+for symbol in phrase:
+  counter += 1
+  if symbol == '*':
+    asterisk = True
+    break
+    
+if asterisk:
+  print('Символ ‘*’ стоит на позиции', counter)
+else:
+  print('"*" в тексте отсутствует')
