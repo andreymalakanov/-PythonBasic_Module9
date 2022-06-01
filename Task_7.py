@@ -15,3 +15,18 @@ print('Задача 7. Великий и могучий')
 # Пример:
 # Введите текст: Меня зовут Петр
 # Длина самого длинного слова: 5
+
+
+text = input('Введите текст: ')
+letterCounter = 0
+lettersMax = 0
+
+for symbol in text:
+  if symbol != ' ':
+    letterCounter += 1
+  else:
+    letterCounter = 0
+  if letterCounter > lettersMax:
+    lettersMax = letterCounter
+
+print('Длина самого длинного слова:', lettersMax)

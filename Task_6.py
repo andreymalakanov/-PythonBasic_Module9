@@ -15,3 +15,18 @@ print('Задача 6. Спецшифр')
 # Пример:
 # Введите строку: ssbbbsssbc
 # Самая длинная последовательность: 3
+
+phrase = input('Введите строку: ')
+sCounter = 0
+sCounterMax = 0
+
+for symbol in phrase:
+  if symbol == 's':
+    sCounter += 1
+  else:
+    sCounter = 0
+  if sCounter > sCounterMax:
+    sCounterMax = sCounter
+
+print('Самая длинная последовательность:', sCounterMax)
+

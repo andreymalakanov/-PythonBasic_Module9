@@ -14,3 +14,15 @@ print('Задача 9. Коровы')
 # 
 # Пользователь вводит строку из 10 символов a и b.
 # Необходимо определить, сколько в итоге будет произведено молока за день
+
+phrase = input('Введите строку: ')
+vMilkseat = 0
+vMilkSum
+
+for seat in phrase:
+  vMilkseat +=2
+  if seat = a:
+    vMilkSum += vMilkseat
+
+print('Общий объем молока: ', vMilkSum)
+  
