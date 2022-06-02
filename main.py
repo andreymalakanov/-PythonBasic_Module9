@@ -1,30 +1,80 @@
-# Andrey Malakanov
-# Skillbox PythonBasic
 
-print('Задача 9. Коровы')
+phrase = 'sandwich'
+#phrase = 'abecofi'
+counter = 0
+new_phrase = ''
+letter_counter = 0
+nCounter = 0
+a = 0
+num = 1000
+First_part = ''
+Second_part = ''
 
-# Для коров есть 10 стойл.
-# В каждом стойле разные условия для животных, поэтому и молока они дают по-разному.
-# В первом стойле производят 2 литра в день,
-# во втором 4, 
-# в третьем - 6, потом 8, 10, 12, 14, 16, 18, 20. 
-# Но коровы стоят не во всех стойлах. 
-# Свободные и занятые обозначаются строкой из букв a и b,
-# где a - свободное стойло, b - занятое.
-# 
-# Пользователь вводит строку из 10 символов a и b.
-# Необходимо определить, сколько в итоге будет произведено молока за день
+for i in phrase:
+  counter += 1
 
-phrase = input('Введите строку: ')
-vMilkseat = 0
-vMilkSum = 0
+print ('Counter = ', counter)
 
-for seat in phrase:
-  vMilkseat +=2
-  if vMilkseat > 20:
+for letter in phrase:
+  letter_counter += 1
+  if counter % 2 == 1:
+    halfCounter = int((counter + 1) / 2)
+  else:
+    halfCounter = int(counter / 2)
+  if letter_counter <= halfCounter:
+    First_part += letter
+print(First_part) # help
+
+print ('letter_counter = ', letter_counter)
+
+max = letter_counter
+# letter_counter2 = 0
+
+
+while True:
+  if max <= 0:
     break
-  elif seat == 'a':
-    vMilkSum += vMilkseat
+  print('test') # help
+  letter_counter2 = 0
+  for letter2 in phrase:
+    letter_counter2 += 1
+    if max % 2 == 1:
+      max -= 1
+    if letter_counter2 == max:
+      Second_part += letter2
+      max -= 2
+      print(Second_part)
 
-print('Общий объем молока: ', vMilkSum)
-  
+print('\n' * 2)
+
+letter_counter = 0
+last1 = 0
+last2 = 0
+# letter1_count = -2
+
+for number in range(counter):
+  if number % 2 == 0:
+    letter_count = -2
+    for letter1 in First_part:
+      letter_count += 2
+      if letter_count == number:
+        print(letter1, end = '')
+        last1 += 1
+        break
+  elif number % 2 == 1:
+    letter_count = -1
+    for letter2 in Second_part:
+      letter_count += 2
+      if letter_count == number:
+        print(letter2, end = '')
+        last2 += 1
+        break
+
+print('\n' * 2)
+
+
+print ('Новая фраза = ', First_part)
+print ('Новая фраза = ', Second_part)
+
+print('\n' + '=' * 20, '\n')
+
