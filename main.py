@@ -17,11 +17,13 @@ print('Задача 9. Коровы')
 
 phrase = input('Введите строку: ')
 vMilkseat = 0
-vMilkSum
+vMilkSum = 0
 
 for seat in phrase:
   vMilkseat +=2
-  if seat = a:
+  if vMilkseat > 20:
+    break
+  elif seat == 'a':
     vMilkSum += vMilkseat
 
 print('Общий объем молока: ', vMilkSum)
