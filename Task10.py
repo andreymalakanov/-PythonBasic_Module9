@@ -26,53 +26,57 @@ print('Задача 10. Метод бутерброда')
 # Шифр:  | s | h | a | c | n | i | d | w |
 
 
-
-phrase = 'abecof'
-counter = 0
-new_phrase = ''
+phrase = input('Введите слово для шифрования: ')
+# phrase = 'sandwich'
+counter = 0  # Счетчик колличесвта букв
 letter_counter = 0
-nCounter = 0
-a = 0
-num = 1000
 First_part = ''
 Second_part = ''
 
+# Счетчик букв
 for i in phrase:
   counter += 1
 
-print ('Counter = ', counter)
-
+# Первая часть слова
 for letter in phrase:
   letter_counter += 1
-  if letter_counter % 2 == 1:
+  if counter % 2 == 1:
+    halfCounter = int((counter + 1) / 2)
+  else:
+    halfCounter = int(counter / 2)
+  if letter_counter <= halfCounter:
     First_part += letter
-# print(new_phrase, end = '')
 
-
+# Проверка четности количесвта букв в слове
 max = letter_counter
-# letter_counter2 = 0
+if letter_counter % 2 == 1:
+  letter_counter += 2 
+else:
+  max = letter_counter
 
-
+# Вторая часть слова
 while True:
-  if max <= 0:
+  if max <= letter_counter / 2:
     break
-  print('test')
   letter_counter2 = 0
   for letter2 in phrase:
     letter_counter2 += 1
-    if max % 2 == 1:
-      max -= 1
     if letter_counter2 == max:
       Second_part += letter2
-      max -= 2
-      print(Second_part)
+      max -= 1
 
-print('\n' * 2)
+letter_counter = 0 # обнуление переменной
 
-letter_counter = 0
-last1 = 0
-last2 = 0
-# letter1_count = -2
+# Проверка
+#print ('Новая фраза 1 = ', First_part)
+#print ('Новая фраза 2 = ', Second_part)
+#print('\n' + '=' * 20, '\n')
+
+print('\n')
+
+# Cмешивание двух частей
+print('Введеное слово:          ', phrase)
+print('Зашифрованное слово:      ', end = '')
 
 for number in range(counter):
   if number % 2 == 0:
@@ -81,7 +85,6 @@ for number in range(counter):
       letter_count += 2
       if letter_count == number:
         print(letter1, end = '')
-        last1 += 1
         break
   elif number % 2 == 1:
     letter_count = -1
@@ -89,14 +92,4 @@ for number in range(counter):
       letter_count += 2
       if letter_count == number:
         print(letter2, end = '')
-        last2 += 1
         break
-
-print('\n' * 2)
-
-
-print ('Новая фраза = ', First_part)
-print ('Новая фраза = ', Second_part)
-
-print('\n' + '=' * 20, '\n')
-
