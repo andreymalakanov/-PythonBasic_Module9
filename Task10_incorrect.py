@@ -93,28 +93,3 @@ for number in range(counter):
       if letter_count == number:
         print(letter2, end = '')
         break
-
-
-
-
-print('\n')
-print('\n')
-
-
-phrase = input('Введите слово для Дешифрования: ')
-# phrase = 'shacnidw'
-counter = 0
-firstPart = ''
-secondPart = ''
-
-for symbol in phrase:
-  counter += 1
-  if counter % 2 == 1:
-    firstPart += symbol
-  else:
-    secondPart = symbol + secondPart
-
-print(firstPart)
-print(secondPart)
-
-print('Дешифрованное слово:', firstPart + secondPart)
